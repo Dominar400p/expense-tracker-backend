@@ -7,7 +7,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # FIX: match .env key name
-SECRET_KEY = os.getenv("JWT_SECRET")
+# SECRET_KEY = os.getenv("JWT_SECRET")
+
+SECRET_KEY = os.getenv("SECRET_KEY", "default_secret")
 
 
 def token_required(f):
