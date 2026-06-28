@@ -4,7 +4,7 @@ from flask_cors import CORS
 from routes.expense_routes import expense_bp
 from routes.income_routes import income_bp
 from routes.auth_routes import auth_bp
-from routes.loan_routes import loan_bp
+from routes.ledger_routes import ledger_bp
 
 app = Flask(__name__)
 
@@ -22,13 +22,15 @@ CORS(
 app.register_blueprint(auth_bp)
 app.register_blueprint(expense_bp)
 app.register_blueprint(income_bp)
-app.register_blueprint(loan_bp)
+app.register_blueprint(ledger_bp)
+
 
 @app.route("/")
 def home():
     return {
         "message": "Expense Tracker API is Running"
     }
+
 
 if __name__ == "__main__":
     app.run(debug=True)
