@@ -60,6 +60,8 @@ db = client["expense_tracker"]
 expense_collection = db["expense"]
 income_collection = db["income"]
 user_collection = db["users"]
+loan_collection = db["loan"]
+repayment_collection = db["repayment"]
 
 # MongoDB Connection
 client = MongoClient(os.getenv("MONGO_URI"))
